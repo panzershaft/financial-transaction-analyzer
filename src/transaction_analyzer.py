@@ -15,7 +15,6 @@ class TransactionAnalyzer:
         return transactions.groupby('Description1')['Debit Amount'].sum()
 
     def group_by_month(self):
-        """Groups transactions by month and aggregates income and expenses."""
         self.transactions['Month'] = self.transactions['Posted Transactions Date'].dt.to_period('M')
         return self.transactions.groupby('Month').agg({
             'Debit Amount': 'sum',

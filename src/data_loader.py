@@ -31,7 +31,6 @@ class DataLoader:
             'Debit Amount'].fillna(0)
 
     def get_data(self):
-        """Returns the cleaned transactions data."""
         if self.transactions is None:
             raise ValueError("No data available. Run load_data() and clean_data() first.")
         return self.transactions
